@@ -10,6 +10,7 @@ env:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
@@ -50,3 +51,9 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: test
+
+      - name: Run simple example
+        uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: --example mxml_to_svg -- sheets/Ode_to_joy_Piano_for_kids.xml
