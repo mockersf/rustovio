@@ -26,9 +26,6 @@ fn main() {
     // Generate the bindings from C api
     let bindings = bindgen::Builder::default()
         .header("verovio/tools/c_wrapper.h")
-        .clang_arg("-xc++")
-        .clang_arg("-std=c++17")
-        .clang_arg("-fno-threadsafe-statics")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
         .generate()
         .expect("Unable to generate bindings");
