@@ -1,7 +1,8 @@
-use std::env;
-use std::ffi::CStr;
-use std::ffi::CString;
-use std::fs;
+use std::{
+    env,
+    ffi::{CStr, CString},
+    fs,
+};
 
 fn main() {
     let filename = match env::args().nth(1) {
