@@ -14,9 +14,13 @@ jobs:
         os: [windows-latest, ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository and submodule
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
 
-      - uses: actions-rs/toolchain@v1
+      - name: Setup Rust toolchain
+        uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           components: rustfmt, clippy
@@ -29,7 +33,7 @@ jobs:
           command: fmt
           args: --all -- --check
 
-      - name: Clippy
+      - name: Check Clippy
         uses: actions-rs/cargo@v1
         if: runner.os == 'linux'
         with:
