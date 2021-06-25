@@ -5,6 +5,7 @@ fn main() {
     // Build verovio. Enable the WASM build as this will also build the c static library
     let dst = cmake::Config::new("verovio/cmake")
         .define("BUILD_AS_WASM", "ON")
+        .no_build_target(true)
         .build();
     println!("cargo:rustc-link-search={}/build", dst.display());
 
