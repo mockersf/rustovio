@@ -2,6 +2,9 @@
 name = "rustovio"
 version = "0.1.0"
 description = "bindings to verovio, an engraving library"
+documentation = "https://docs.rs/rustovio"
+homepage = "https://github.com/mockersf/rustovio"
+repository = "https://github.com/mockersf/rustovio"
 authors = ["François Mockers <mockersf@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
