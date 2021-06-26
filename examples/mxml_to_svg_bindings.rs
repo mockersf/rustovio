@@ -21,7 +21,7 @@ fn main() {
     let svg_str = unsafe {
         let tk = rustovio::bindings::vrvToolkit_constructorResourcePath(resource_folder.as_ptr());
         rustovio::bindings::vrvToolkit_loadData(tk, cdata.as_ptr());
-        let svg = rustovio::bindings::vrvToolkit_renderToSVG(tk, 1, 0 as *const i8);
+        let svg = rustovio::bindings::vrvToolkit_renderToSVG(tk, 1, std::ptr::null::<i8>());
         CStr::from_ptr(svg)
     };
     println!("{}", svg_str.to_str().unwrap());

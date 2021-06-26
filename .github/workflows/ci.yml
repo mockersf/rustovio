@@ -43,7 +43,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: run
-          args: --example mxml_to_svg -- sheets/Ode_to_joy_Piano_for_kids.xml
+          args: --example mxml_to_svg_wrapper -- sheets/Ode_to_joy_Piano_for_kids.xml
 
   lint:
     runs-on: ubuntu-latest
