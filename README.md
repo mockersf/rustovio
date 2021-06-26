@@ -1,6 +1,8 @@
 # Rustovio
 
 [![CI](https://github.com/mockersf/rustovio/actions/workflows/ci.yml/badge.svg)](https://github.com/mockersf/rustovio/actions/workflows/ci.yml)
+[![docs](https://docs.rs/rustovio/badge.svg)](https://docs.rs/rustovio)
+[![crates.io](https://img.shields.io/crates/v/rustovio.svg)](https://crates.io/crates/rustovio)
 
 Rust bindings to [Verovio](https://github.com/rism-digital/verovio). It offer the raw bindings and a limited wrapper.
 
