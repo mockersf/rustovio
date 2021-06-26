@@ -1,6 +1,6 @@
 [package]
 name = "rustovio"
-version = "0.1.0"
+version = "0.1.1-dev"
 description = "bindings to verovio, an engraving library"
 documentation = "https://docs.rs/rustovio"
 homepage = "https://github.com/mockersf/rustovio"
