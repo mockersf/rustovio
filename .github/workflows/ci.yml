@@ -71,3 +71,23 @@ jobs:
         with:
           command: clippy
           args: -- -D warnings
+
+  deny:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository and submodule
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Install cargo deny
+        uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: cargo-deny
+
+      - name: Check licens, duplicates, security issues, bans
+        uses: actions-rs/cargo@v1
+        with:
+          command: deny
+          args: check
