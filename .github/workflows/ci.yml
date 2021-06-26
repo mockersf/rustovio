@@ -8,7 +8,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  build-and-test:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
@@ -28,20 +28,6 @@ jobs:
           components: rustfmt, clippy
           override: true
 
-      - name: Check the format
-        uses: actions-rs/cargo@v1
-        if: runner.os == 'linux'
-        with:
-          command: fmt
-          args: --all -- --check
-
-      - name: Check Clippy
-        uses: actions-rs/cargo@v1
-        if: runner.os == 'linux'
-        with:
-          command: clippy
-          args: -- -D warnings
-
       - name: Build
         uses: actions-rs/cargo@v1
         with:
@@ -58,3 +44,31 @@ jobs:
         with:
           command: run
           args: --example mxml_to_svg -- sheets/Ode_to_joy_Piano_for_kids.xml
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository and submodule
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Setup Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+          override: true
+
+      - name: Check the format
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --all -- --check
+
+      - name: Check Clippy
+        uses: actions-rs/cargo@v1
+        with:
+          command: clippy
+          args: -- -D warnings
