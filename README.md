@@ -1,5 +1,7 @@
 # Rustovio
 
+[![CI](https://github.com/mockersf/rustovio/actions/workflows/ci.yml/badge.svg)](https://github.com/mockersf/rustovio/actions/workflows/ci.yml)
+
 Rust bindings to [Verovio](https://github.com/rism-digital/verovio)
 
 ## Limitations
