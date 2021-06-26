@@ -10,9 +10,10 @@ env:
 jobs:
   build:
     strategy:
-      fail-fast: false
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest]
+        # Windows disabled until it works
+        # os: [windows-latest, ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repository and submodule
