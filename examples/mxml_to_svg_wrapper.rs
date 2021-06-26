@@ -14,5 +14,5 @@ fn main() {
     let mut tk = VerovioToolkit::new("verovio/data").unwrap();
     tk.load_data_from_file(filename);
     let svg_str = tk.render_to_svg(1);
-    println!("{}", svg_str);
+    println!("{}", svg_str.unwrap());
 }

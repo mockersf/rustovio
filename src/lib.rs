@@ -58,12 +58,12 @@ impl VerovioToolkit {
     }
 
     /// Render a sheet page as SVG
-    pub fn render_to_svg(&mut self, page_number: i32) -> &str {
+    pub fn render_to_svg(&mut self, page_number: i32) -> Option<&str> {
         let svg_cstr = unsafe {
             let c_pointer =
                 bindings::vrvToolkit_renderToSVG(self.tk, page_number, std::ptr::null::<i8>());
             CStr::from_ptr(c_pointer)
         };
-        svg_cstr.to_str().unwrap()
+        svg_cstr.to_str().ok()
     }
 }

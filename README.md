@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/mockersf/rustovio/actions/workflows/ci.yml/badge.svg)](https://github.com/mockersf/rustovio/actions/workflows/ci.yml)
 
-Rust bindings to [Verovio](https://github.com/rism-digital/verovio)
+Rust bindings to [Verovio](https://github.com/rism-digital/verovio). It offer the raw bindings and a limited wrapper.
 
 ## Limitations
 
@@ -13,7 +13,7 @@ This currrently does not work on Windows, mostly because I don't have one to che
 ```rust
 let mut tk = VerovioToolkit::new("verovio/data").unwrap();
 tk.load_data_from_file(filename);
-println!("{}", tk.render_to_svg(1));
+println!("{}", tk.render_to_svg(1).unwrap());
 ```
 
 ## Bindings
