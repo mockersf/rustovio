@@ -66,13 +66,4 @@ impl VerovioToolkit {
         };
         svg_cstr.to_str().unwrap()
     }
-
-    /// Render a sheet page as MIDI
-    pub fn render_to_midi(&mut self) -> &str {
-        let svg_cstr = unsafe {
-            let c_pointer = bindings::vrvToolkit_renderToMIDI(self.tk, std::ptr::null::<i8>());
-            CStr::from_ptr(c_pointer)
-        };
-        svg_cstr.to_str().unwrap()
-    }
 }
