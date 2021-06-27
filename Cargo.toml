@@ -10,9 +10,12 @@ edition = "2018"
 license = "MIT OR Apache-2.0"
 keywords = ["music", "musicxml", "engraving", "verovio"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+base64 = { version = "0.13", optional = true }
+
+[features]
+default = [ "midi-decoding" ]
+midi-decoding = [ "base64" ]
 
 [build-dependencies]
 bindgen = "0.58"
