@@ -18,5 +18,5 @@ default = [ "midi-decoding" ]
 midi-decoding = [ "base64" ]
 
 [build-dependencies]
-bindgen = "0.58"
+bindgen = "0.59"
 cmake = "0.1"
