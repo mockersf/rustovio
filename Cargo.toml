@@ -11,7 +11,7 @@ license = "MIT OR Apache-2.0"
 keywords = ["music", "musicxml", "engraving", "verovio"]
 
 [dependencies]
-base64 = { version = "0.13", optional = true }
+base64 = { version = "0.20", optional = true }
 
 [features]
 default = [ "midi-decoding" ]
